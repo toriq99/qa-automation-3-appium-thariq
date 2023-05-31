@@ -1,3 +1,5 @@
+const path = require('path')
+
 exports.config = {
     //
     // ====================
@@ -24,6 +26,7 @@ exports.config = {
     // will be called from there.
     //
     specs: [
+        './test/specs/**/*.js'
         // ToDo: define location for spec files here
     ],
     // Patterns to exclude.
@@ -55,10 +58,10 @@ exports.config = {
     capabilities: [{
         // capabilities for local Appium web tests on an Android Emulator
         platformName: 'Android', // or "iOS"
-        browserName: 'Chrome', // or "Safari"
-        'appium:deviceName': 'Android GoogleAPI Emulator', // or "iPhone Simulator"
-        'appium:platformVersion': '12.0', // or "16.2" (for running iOS v16)
-        'appium:automationName': 'UiAutomator2' // or "XCUITest"
+        'appium:deviceName': 'Inspect_Emulator', // or "iPhone Simulator"
+        'appium:platformVersion': '9.0', // or "16.2" (for running iOS v16)
+        'appium:automationName': 'UiAutomator2', // or "XCUITest"
+        'appium:app': path.join(process.cwd(), "./app/android/Android-MyDemoAppRN.1.3.0.build-244.apk")
     }],
     //
     // ===================
