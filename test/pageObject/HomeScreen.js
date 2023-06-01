@@ -6,6 +6,8 @@ class HomeScreen {
     get title () { return $('//android.view.ViewGroup[@content-desc="container header"]/android.widget.TextView')}
     get flashAlert () { return $('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.LinearLayout/android.widget.TextView')}
     get confirmLogout () { return $('/hierarchy/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.FrameLayout/android.widget.LinearLayout/android.widget.ScrollView/android.widget.LinearLayout/android.widget.Button[2]')}
+    get productImg () { return $('(//android.view.ViewGroup[@content-desc="store item"])[1]/android.view.ViewGroup[1]/android.widget.ImageView')}
+    get productText () { return $('(//android.widget.TextView[@content-desc="store item text"])[1]')}
 
 
     async openNavbar() {
