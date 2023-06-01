@@ -4,8 +4,8 @@ class ProductScreen {
     get productPage () { return $('//android.widget.ScrollView[@content-desc="product screen"]/android.view.ViewGroup')}
     get productImg () { return $('//android.widget.ScrollView[@content-desc="product screen"]/android.view.ViewGroup/android.widget.ImageView')}
     get addToCartBtn () { return $('//android.view.ViewGroup[@content-desc="Add To Cart Button"]/android.widget.TextView')}
-    // get addToCartBtn () { return $('//android.widget.TextView[@content-desc="Add To Cart"')}
     get cartIcon () { return $('//android.view.ViewGroup[@content-desc="cart badge"]/android.widget.TextView')}
+    get cartIconClick () { return $('//android.view.ViewGroup[@content-desc="cart badge"]/android.widget.ImageView')}
 
     
     async addToCart() {

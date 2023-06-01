@@ -1,16 +1,25 @@
 const CartScreen = require('../pageObject/CartScreen')
-const ProducScreen = require('../pageObject/ProductScreen')
+const ProductScreen = require('../pageObject/ProductScreen')
+const HomeScreen = require('../pageObject/HomeScreen')
+const LoginScreen = require('../pageObject/LoginScreen')
+
 
 
 describe('ADD TO CART STORY', () => {
 
-    describe('opening cart screen', () => {
+    describe('open app, then login, then add product to cart', () => {
 
         it('should navigate to cart screen and showing cart list', async() => {
 
-            await ProducScreen.cartIcon.click()
+            await HomeScreen.openNavbar()
+            await HomeScreen.clickLoginNav()
+            await LoginScreen.login('bob@example.com', '10203040')
+            await HomeScreen.productImg.click()
+            await ProductScreen.addToCart()
+            await ProductScreen.cartIconClick.click()
 
             await expect(CartScreen.cartPage).toBeExisting()
+            await expect(CartScreen.cartList).toBeExisting()
         })
     })
 })

@@ -18,6 +18,17 @@ describe('LOGIN STORY', () => {
 
         await expect(HomeScreen.title).toBeExisting()
     })
+
+    it('failed login if username password empty', async() => {
+
+        driver.closeApp()
+        driver.launchApp()
+
+        await HomeScreen.openNavbar()
+        await HomeScreen.clickLoginNav()
+
+        await expect(LoginScreen.loginTitle).toHaveTextContaining("Login")
+    })
 })
 
 describe('LOGOUT STORY', () => {
