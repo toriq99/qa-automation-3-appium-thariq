@@ -18,8 +18,9 @@ describe('Filter product descending', () => {
             return true;
         }
           
-        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]').getText()
-        const isDescending = isListDescending(listElements)
+        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]')
+        const listText = listElements.map(element => element.getText())
+        const isDescending = isListDescending(listText)
         
         await expect(isDescending).toBe(true)
     })
@@ -41,8 +42,9 @@ describe('Filter product ascending', () => {
             return true;
         }
           
-        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]').getText()
-        const isAscending = isListAscending(listElements)
+        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]')
+        const listText = listElements.map(element => element.getText())
+        const isAscending = isListAscending(listText)
         
         await expect(isAscending).toBe(true)
     })
