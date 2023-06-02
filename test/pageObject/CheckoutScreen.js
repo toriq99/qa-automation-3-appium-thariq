@@ -12,6 +12,12 @@ class CheckoutScreen {
     get zipCodeForm () { return $('~Zip Code* input field')}
     get countryForm () { return $('~Country* input field')}
     get paymentBtn () { return $('~To Payment button')}
+    // error msg form
+    get errorFullname () { return $('//android.view.ViewGroup[@content-desc="Full Name*-error-message"]/android.widget.TextView')}
+    get errorAddress1 () { return $('//android.view.ViewGroup[@content-desc="Address Line 1*-error-message"]/android.widget.TextView')}
+    get errorCity () { return $('//android.view.ViewGroup[@content-desc="City*-error-message"]/android.widget.TextView')}
+    get errorZipCode () { return $('//android.view.ViewGroup[@content-desc="Zip Code*-error-message"]/android.widget.TextView')}
+    get errorCountry () { return $('//android.view.ViewGroup[@content-desc="Country*-error-message"]/android.widget.TextView')}
 
     // checkout screen 2
     get paymentScreen () { return $('~checkout payment screen')}
