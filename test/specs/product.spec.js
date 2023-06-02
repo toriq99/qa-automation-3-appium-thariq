@@ -2,6 +2,52 @@ const HomeScreen = require('../pageObject/HomeScreen')
 const ProductScreen = require('../pageObject/ProductScreen')
 
 
+describe('Filter product descending', () => {
+
+    it('should sort product by descending name', async() => {
+
+        await ProductScreen.filterOption.click()
+        await ProductScreen.descProduct.click()
+
+        function isListDescending(list) {
+            for (let i = 0; i < list.length - 1; i++) {
+              if (list[i] < list[i + 1]) {
+                return false;
+              }
+            }
+            return true;
+        }
+          
+        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]').getText()
+        const isDescending = isListDescending(listElements)
+        
+        await expect(isDescending).toBe(true)
+    })
+})
+
+describe('Filter product ascending', () => {
+
+    it('should sort product by ascending name', async() => {
+
+        await ProductScreen.filterOption.click()
+        await ProductScreen.ascProduct.click()
+
+        function isListAscending(list) {
+            for (let i = 0; i < list.length - 1; i++) {
+              if (list[i] > list[i + 1]) {
+                return false;
+              }
+            }
+            return true;
+        }
+          
+        const listElements = $$('//android.widget.TextView[@content-desc="store item text"]').getText()
+        const isAscending = isListAscending(listElements)
+        
+        await expect(isAscending).toBe(true)
+    })
+})
+
 describe('Choosing product', () => {
 
     it('should be navigate to product detail', async() => {
